@@ -1,0 +1,26 @@
+
+<body>
+<div class="search_allTitle">
+<!--    <button onclick="changeSubmit()">변경사항 저장</button>-->
+<!--    <button onclick="changeCancle()">변경사항 취소</button>-->
+<!--    <button onclick="matchesData()">실험버튼</button>-->
+</div>
+<table class="search_allTable">
+    <tr>
+        <th scope="col">상품번호</th>
+        <th scope="col">상품이름</th>
+        <th scope="col">수량</th>
+        <th scope="col">가격</th>
+        <th scope="col">수정</th>
+    </tr>
+    <tr class="search_allForm" th:each="list : ${product}" onclick="getChildNode(this)">
+        <td><input type="text" th:value="${list?.pid}" readonly style="cursor:auto"></td>
+        <td><input onblur="onChanged(this)" class="canWrite" type="text" th:value="${list?.pname}" readonly></td>
+        <td><input onblur="onChanged(this)" class="canWrite" type="text" th:value="${list?.quantity}" readonly></td>
+        <td><input onblur="onChanged(this)" class="canWrite" type="text" th:value="${list?.price}" readonly></td>
+            <td ><span hidden>수정 중</span></td>
+    </tr>
+
+</table>
+</body>
+</html>

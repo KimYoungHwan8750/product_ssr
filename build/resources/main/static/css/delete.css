@@ -1,0 +1,22 @@
+.deleteForm{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.deleteForm>div:first-child{
+}
+.deleteInputSection{
+    height: 50px;
+}
+.resultMsg-Success{
+    color:green;
+}
+
+.resultMsg-Failed{
+    color:red;
+}
+.resultMsg{
+    text-align: center;
+    font-size: 24px;
+}
