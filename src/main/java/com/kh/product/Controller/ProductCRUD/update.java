@@ -29,7 +29,11 @@ public class update {
         try {
             if (productService.FindByPid(productDTO.getPid()).getPid() == null) {
                 return "조회된 상품이 없습니다.";
-            } else {
+            } else if(productDTO.getPrice()<1000){
+                return "가격을 확인해주세요.";
+            } else if(productDTO.getQuantity()<1){
+                return "수량을 확인해주세요.";
+            }else {
                 productRepository.save(new Product(productDTO));
 
                 return "상품정보가 수정되었습니다.";

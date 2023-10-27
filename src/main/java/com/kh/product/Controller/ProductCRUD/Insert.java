@@ -26,7 +26,7 @@ public class Insert {
     public String productInsert(@Valid @ModelAttribute("productDTO") ProductDTO productDTO, BindingResult bindingResult, Model model){
 
 
-
+        try{
         if(productDTO.getPrice()==null){
             bindingResult.rejectValue("price","nullchk",null);
 
@@ -60,6 +60,11 @@ public class Insert {
         } else{
 
             model.addAttribute("hasError",true);
+        }} catch (Exception e){
+            bindingResult.rejectValue("price","global",null);
+
+            return "insert/insert.html";
+
         }
         return "insert/insert.html";
 
